@@ -208,8 +208,8 @@ const categoryArticles: Record<string, Array<{
   ],
 };
 
-export default function CategoryPage({ params }: { params: { category: string } }) {
-  const categorySlug = params.category;
+export default async function CategoryPage({ params }: { params: { category: string | Promise<string> } }) {
+  const categorySlug = await params.category;
   const category = CATEGORIES.find((c) => c.slug === categorySlug);
   const articles = categoryArticles[categorySlug] || [];
 

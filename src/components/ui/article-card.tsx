@@ -62,7 +62,7 @@ export function ArticleCard({
           ) : (
             <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
               <span className="text-4xl font-bold text-primary/20">
-                {title.charAt(0)}
+                {title ? title.charAt(0) : (category ? category.charAt(0) : '')}
               </span>
             </div>
           )}

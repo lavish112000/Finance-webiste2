@@ -18,6 +18,7 @@ import { ArticleCard } from '@/components/ui/article-card';
 import { CategoryCard } from '@/components/ui/category-card';
 import { MarketWidget } from '@/components/ui/stat-card';
 import { GlobalMarketSnapshot } from '@/components/ui/market-snapshot';
+import GradientBlinds from '@/components/ui/gradient-blinds';
 import { CATEGORIES, MARKET_INDICES, SITE_CONFIG } from '@/lib/constants';
 
 const sampleArticles = [
@@ -127,7 +128,25 @@ export default function HomePage() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-finance-navy-900 via-finance-navy-800 to-finance-navy-900 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-t from-finance-navy-900/80 to-transparent" />
+        {/* Animated Background */}
+        <div className="absolute inset-0 opacity-30">
+          <GradientBlinds
+            gradientColors={['#10b981', '#059669', '#047857', '#064e3b']}
+            angle={45}
+            noise={0.2}
+            blindCount={12}
+            blindMinWidth={50}
+            spotlightRadius={0.6}
+            spotlightSoftness={1.2}
+            spotlightOpacity={0.8}
+            mouseDampening={0.15}
+            distortAmount={0}
+            shineDirection="left"
+            mixBlendMode="screen"
+          />
+        </div>
+        
+        <div className="absolute inset-0 bg-gradient-to-t from-finance-navy-900/90 to-transparent" />
         
         <div className="container mx-auto px-4 lg:px-8 py-20 md:py-28 relative">
           <motion.div

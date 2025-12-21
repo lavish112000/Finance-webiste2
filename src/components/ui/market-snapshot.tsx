@@ -47,7 +47,7 @@ export function MarketSnapshot({
           <h3 className="text-lg font-bold">{title}</h3>
         </div>
         {lastUpdated && (
-          <span className="text-xs text-muted-foreground">
+          <span className="text-xs text-muted-foreground" suppressHydrationWarning>
             Updated: {lastUpdated}
           </span>
         )}

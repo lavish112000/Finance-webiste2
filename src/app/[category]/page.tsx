@@ -16,6 +16,8 @@ import { StockMarketDashboard } from '@/components/investing/stock-market-dashbo
 import { PortfolioAllocation } from '@/components/investing/portfolio-allocation';
 import { ComparisonTable } from '@/components/investing/comparison-table';
 import { BankingDashboard } from '@/components/banking/banking-dashboard';
+import { FintechDashboard } from '@/components/fintech/fintech-dashboard';
+import { GlobalFinanceDashboard } from '@/components/global-finance/global-finance-dashboard';
 
 interface CategoryPageProps {
   params: Promise<{
@@ -113,6 +115,18 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       {categorySlug === 'banking' && (
         <section className="container mx-auto px-4 lg:px-8 py-8 -mt-8 relative z-10">
           <BankingDashboard />
+        </section>
+      )}
+
+      {categorySlug === 'fintech' && (
+        <section className="container mx-auto px-4 lg:px-8 py-8 -mt-8 relative z-10">
+          <FintechDashboard />
+        </section>
+      )}
+
+      {categorySlug === 'global-finance' && (
+        <section className="container mx-auto px-4 lg:px-8 py-8 -mt-8 relative z-10">
+          <GlobalFinanceDashboard />
         </section>
       )}
 

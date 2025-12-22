@@ -1,425 +1,129 @@
-# 🏦 Finance & Economy Blogging Platform
+# 🏦 FinanceHub - Modern Finance & Economy Platform
 
-A **world-class finance and economy blogging platform** built with the latest web technologies. Trustworthy, authoritative, data-backed content for Indian and global audiences.
+A **world-class finance and economy educational platform** built with Next.js 15. Designed to provide trustworthy, authoritative, and data-backed content for Indian and global audiences, featuring interactive dashboards, real-time market data simulations, and financial calculators.
 
-## ✨ Features
+![FinanceHub Preview](https://placehold.co/1200x630/1e293b/ffffff?text=FinanceHub+Platform)
 
-### 🎯 Content Categories
+## ✨ Key Features
 
-- **Economy** - GDP, inflation, fiscal policy, monetary policy
-- **Personal Finance** - Budgeting, savings, investments, retirement planning
-- **Investing** - Stocks, mutual funds, ETFs, portfolio management
-- **Banking** - Accounts, loans, credit cards, digital banking
-- **Stock Market** - Trading, technical analysis, market trends
-- **FinTech** - Digital payments, cryptocurrency, blockchain
-- **Tax Planning** - Income tax, deductions, tax-saving investments
-- **Global Finance** - International markets, forex, Fed policy
+### 📊 Interactive Dashboards
 
-### 🚀 Technical Highlights
+We have built specialized dashboards for each major financial sector to visualize complex data:
 
-- ⚡ Built with **Next.js 15** (App Router, Turbopack)
-- 🎨 **Tailwind CSS 4** with custom design system
-- 📝 **MDX** content system with advanced features
-- 🌙 Dark mode support with next-themes
-- 📱 Fully responsive & mobile-first
-- ♿ WCAG AAA accessibility standards
-- 🔍 SEO-optimized with dynamic sitemap & robots.txt
-- 📊 Interactive market ticker with real-time data
-- 🎭 Smooth animations with Framer Motion
-- 📖 Auto-generated table of contents
-- 🔗 Social sharing buttons
-- ⚡ Code syntax highlighting
-- 📈 Reading time estimation
-- 🏦 **NEW:** Comprehensive market snapshot widget
-- 📋 **NEW:** Comparison tables for financial data
-- 💡 **NEW:** Interactive glossary tooltips
-- 📐 **NEW:** Structured data (JSON-LD) for SEO
-- 🎯 **NEW:** Enhanced article templates
+- **📈 Investing Dashboard**: Real-time stock market simulation, portfolio tracking, and sector performance heatmaps.
+- **🏦 Banking Dashboard**: Interactive credit score visualizer, loan comparison tools, and account type breakdowns.
+- **💳 Fintech Dashboard**: Cryptocurrency price tracking, digital payment adoption trends, and blockchain visualization.
+- **🌍 Global Finance Dashboard**: Live currency exchange rates, global market indices, and economic indicators.
+- **📉 Economy Dashboard**: GDP growth tracking, inflation analysis, and fiscal policy timelines.
 
-### 📄 Pages & Utilities
+### 🧮 Financial Tools & Calculators
 
-- **Homepage** - Hero, featured articles, market widget, category showcase
-- **Category Pages** - Dynamic routing for all 8 categories
-- **Article Pages** - Full MDX support with TOC, share buttons, related articles
-- **About Page** - Mission, values, coverage areas
-- **Newsletter Page** - Subscription form with interests
-- **Glossary Page** - 80+ financial terms with definitions
-- **Sitemap** - Dynamically generated XML sitemap
-- **Robots.txt** - SEO crawler directives
+Empowering users to make better financial decisions:
+
+- **SIP Calculator**: Project mutual fund returns with adjustable monthly investment, duration, and expected return rates.
+- **EMI Calculator**: Calculate monthly loan payments with detailed amortization schedules.
+- **Financial Glossary**: A comprehensive dictionary of 80+ financial terms with interactive tooltips throughout articles.
+
+### 📚 Content Management
+
+- **MDX-Powered Articles**: Rich content with embedded components, charts, and dynamic data.
+- **Smart Categorization**: 8 distinct categories including Personal Finance, Investing, Economy, and more.
+- **Reading Experience**: Auto-generated table of contents, reading time estimates, and progress bars.
+
+### 🎨 User Experience
+
+- **Responsive Design**: Fully optimized for mobile, tablet, and desktop.
+- **Dark Mode**: Seamless theme switching with `next-themes`.
+- **Accessibility**: Built with WCAG AAA standards in mind using accessible UI primitives.
+- **Performance**: Optimized with Next.js App Router and Turbopack for lightning-fast navigation.
 
 ## 🛠️ Tech Stack
 
-### Core
+- **Framework**: [Next.js 15](https://nextjs.org/) (App Router)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Charts**: [Recharts](https://recharts.org/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Content**: [MDX](https://mdxjs.com/)
+- **UI Components**: Custom built on top of Radix UI primitives
 
-- **Next.js 15** - React framework with App Router
-- **TypeScript 5** - Type safety and better DX
-- **Tailwind CSS 4** - Utility-first CSS with @theme syntax
-- **Turbopack** - Ultra-fast bundler
+## 📂 Project Structure
 
-### Content & Markdown
+```
+src/
+├── app/                 # Next.js App Router pages
+│   ├── [category]/      # Dynamic category pages
+│   ├── api/             # API routes for market data
+│   ├── tools/           # Calculators and utility pages
+│   ├── contact/         # Contact page
+│   └── ...
+├── components/          # React components
+│   ├── banking/         # Banking-specific dashboards
+│   ├── calculators/     # SIP and EMI calculators
+│   ├── economy/         # Economic charts and widgets
+│   ├── fintech/         # Crypto and payment visualizations
+│   ├── investing/       # Stock market tools
+│   └── ui/              # Reusable UI atoms (Cards, Buttons, etc.)
+├── content/             # MDX article files organized by category
+├── lib/                 # Utilities, constants, and helper functions
+└── types/               # TypeScript type definitions
+```
 
-- **next-mdx-remote** - MDX rendering
-- **gray-matter** - Frontmatter parsing
-- **remark-gfm** - GitHub Flavored Markdown
-- **rehype-slug** - Heading IDs for TOC
-- **rehype-autolink-headings** - Auto-linked headings
-- **rehype-pretty-code** - Code syntax highlighting
-- **reading-time** - Reading time calculation
+## 🚀 Getting Started
 
-### UI & Animation
-
-- **framer-motion** - Smooth animations
-- **lucide-react** - Beautiful icons
-- **next-themes** - Dark mode support
-
-### Fonts
-
-- **Inter** - Body text (Google Fonts)
-- **JetBrains Mono** - Code snippets (Google Fonts)
-
-## 📦 Getting Started
+Follow these steps to set up the project locally:
 
 ### Prerequisites
 
-- Node.js 18+ 
-- npm or yarn or pnpm
+- Node.js 18.17 or later
+- npm or yarn
 
 ### Installation
 
-```bash
-# Clone the repository
-git clone <repository-url>
+1. **Clone the repository**
 
-# Navigate to project directory
-cd Finance-webiste2
+   ```bash
+   git clone https://github.com/yourusername/financehub.git
+   cd financehub
+   ```
 
-# Install dependencies
-npm install
-```
+2. **Install dependencies**
 
-### Development Commands
+   ```bash
+   npm install
+   ```
 
-```bash
-# Run development server with Turbopack
-npm run dev
+3. **Run the development server**
 
-# Build for production
-npm run build
+   ```bash
+   npm run dev
+   ```
 
-# Start production server
-npm run start
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000) to see the application running.
 
-# Run linter
-npm run lint
-```
+## 📝 Scripts
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-## 📁 Project Structure
-
-```
-Finance-webiste2/
-├── src/
-│   ├── app/                    # Next.js App Router
-│   │   ├── layout.tsx          # Root layout with theme provider
-│   │   ├── page.tsx            # Homepage
-│   │   ├── globals.css         # Global styles & design system
-│   │   ├── [category]/         # Dynamic category pages
-│   │   ├── about/              # About page
-│   │   ├── newsletter/         # Newsletter subscription
-│   │   ├── glossary/           # Financial glossary
-│   │   ├── sitemap.ts          # Dynamic sitemap generation
-│   │   └── robots.ts           # SEO robots.txt
-│   ├── components/             # React components
-│   │   ├── layout/             # Header, Footer, MarketTicker
-│   │   ├── ui/                 # Reusable UI components
-│   │   └── providers/          # Theme provider
-│   ├── lib/                    # Utility functions
-│   │   ├── utils.ts            # Helper functions
-│   │   ├── constants.ts        # Site config, categories, data
-│   │   └── content.ts          # MDX content utilities
-│   └── types/                  # TypeScript type definitions
-├── content/                    # MDX articles
-│   ├── economy/
-│   ├── personal-finance/
-│   ├── investing/
-│   ├── banking/
-│   ├── stock-market/
-│   ├── fintech/
-│   ├── tax-planning/
-│   └── global-finance/
-├── public/                     # Static assets
-├── next.config.ts              # Next.js configuration
-├── tailwind.config.ts          # Tailwind CSS configuration
-└── tsconfig.json               # TypeScript configuration
-```
-
-## 📝 Content Management
-
-### Adding New Articles
-
-1. Create a new `.mdx` file in the appropriate category folder:
-
-```bash
-content/[category]/your-article-slug.mdx
-```
-
-2. Add frontmatter at the top of the file:
-
-```yaml
----
-title: "Your Article Title"
-description: "Brief description for SEO"
-date: "2025-01-28"
-author: "Author Name"
-category: "economy"
-tags: ["gdp", "india", "growth"]
-readTime: "8 min read"
-featured: true
----
-```
-
-3. Write your content using Markdown and JSX components:
-
-```mdx
-## Introduction
-
-Your article content here...
-
-### Key Takeaways
-
-<Callout type="info">
-Important information or tips
-</Callout>
-
-### Data Tables
-
-| Metric | 2023 | 2024 | Change |
-|--------|------|------|--------|
-| GDP    | 7.2% | 7.6% | +0.4%  |
-
-### FAQ
-
-<details>
-<summary>What is GDP?</summary>
-GDP stands for Gross Domestic Product...
-</details>
-```
-
-### Available Callout Types
-
-- `info` - Blue informational callouts
-- `warning` - Yellow warning messages
-- `success` - Green success messages
-- `error` - Red error/alert messages
-
-### New Advanced Components
-
-#### Comparison Tables
-
-```mdx
-<ComparisonTable
-  title="Investment Options Comparison"
-  columns={[
-    { key: 'feature', label: 'Feature', color: 'primary' },
-    { key: 'stocks', label: 'Stocks', color: 'success' },
-    { key: 'mutualFunds', label: 'Mutual Funds', color: 'info' }
-  ]}
-  rows={[
-    { feature: 'Liquidity', stocks: true, mutualFunds: true },
-    { feature: 'Min Investment', stocks: '₹1,000', mutualFunds: '₹500' },
-    { feature: 'Risk Level', stocks: 'High', mutualFunds: 'Medium' }
-  ]}
-/>
-```
-
-Or use the preset:
-```mdx
-<InvestmentComparison />
-```
-
-#### Glossary Tooltips
-
-```mdx
-Learn about <GlossaryTooltip term="GDP" /> in economics.
-```
-
-Pre-defined terms include: GDP, Inflation, Equity, Bond, Dividend, P/E Ratio, Mutual Fund, SIP
-
-#### Market Snapshots
-
-```mdx
-<GlobalMarketSnapshot />
-<IndianMarketSnapshot />
-<CurrencySnapshot />
-```
-
-These widgets display real-time market data with trending indicators and can be placed anywhere in your articles or pages.
-
-## 🎨 Design System
-
-### Color Palette
-
-```css
-/* Finance-focused colors */
---navy-900: #0A1628      /* Dark navy for headers */
---navy-800: #1B2B44      /* Rich navy backgrounds */
---emerald-500: #10B981   /* Success, positive growth */
---emerald-600: #059669   /* Interactive elements */
---gold-400: #FBBF24      /* Premium accents */
---gold-500: #F59E0B      /* Highlights */
---slate-50: #F8FAFC      /* Light backgrounds */
---slate-700: #334155     /* Body text */
-```
-
-### Typography
-
-- **Headings**: Inter (600-800 weight)
-- **Body**: Inter (400-500 weight)
-- **Code**: JetBrains Mono (monospace)
-
-### Responsive Breakpoints
-
-- `sm`: 640px
-- `md`: 768px
-- `lg`: 1024px
-- `xl`: 1280px
-- `2xl`: 1536px
-
-## 🔍 SEO Configuration
-
-### Sitemap
-
-- Auto-generated at `/sitemap.xml`
-- Includes all articles, categories, and static pages
-- Updates dynamically based on content
-
-### Metadata
-
-Each page includes:
-
-- Title and description
-- Open Graph tags for social sharing
-- Twitter Card metadata
-- Canonical URLs
-- Keywords and author information
-
-## 📊 Performance Optimizations
-
-### Image Optimization
-
-- Next.js Image component with AVIF/WebP formats
-- Responsive images with multiple device sizes
-- Lazy loading by default
-
-### Caching Strategy
-
-- Static assets: 1 year cache
-- Images: 1 year cache with immutable
-- API routes: No cache (dynamic content)
-
-### Security Headers
-
-- X-Frame-Options: DENY
-- X-Content-Type-Options: nosniff
-- Referrer-Policy: origin-when-cross-origin
-- Permissions-Policy: camera=(), microphone=()
-
-## 🌙 Dark Mode
-
-Toggle between light and dark themes:
-
-- Automatic system preference detection
-- Manual toggle in header
-- Persistent preference (localStorage)
-- Smooth color transitions
-
-## 📦 Featured Articles
-
-Currently includes 9+ comprehensive articles:
-
-### Economy
-
-- Indian Economy 2025 Outlook (2,300 words)
-- Understanding Inflation (2,500 words)
-
-### Personal Finance  
-
-- Complete Personal Finance Planning Guide (2,500 words)
-
-### Investing
-
-- Mutual Funds Explained (2,400 words)
-- Stock Market Basics for Beginners (2,400 words)
-
-### Banking
-
-- Complete Credit Score Guide (2,300 words)
-
-### Stock Market
-
-- Technical Analysis Basics (2,500 words)
-
-### FinTech
-
-- Cryptocurrency Explained (2,400 words)
-
-### Global Finance
-
-- US Federal Reserve Explained (2,500 words)
-
-## 🚀 Deployment
-
-### Vercel (Recommended)
-
-```bash
-# Install Vercel CLI
-npm i -g vercel
-
-# Deploy
-vercel
-```
-
-### Environment Variables
-
-Create `.env.local` for local development:
-
-```bash
-# Optional: Add your own API keys
-NEXT_PUBLIC_SITE_URL=http://localhost:3000
-```
-
-### Build Output
-
-- Uses standalone output mode for optimal performance
-- Static assets optimized and compressed
-- Server components for faster page loads
+- `npm run dev`: Starts the development server.
+- `npm run build`: Builds the application for production.
+- `npm run start`: Runs the built production application.
+- `npm run lint`: Runs ESLint to check for code quality issues.
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please:
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
 ## 📄 License
 
-This project is licensed under the MIT License.
-
-## 🙏 Acknowledgments
-
-- Built with [Next.js 15](https://nextjs.org/)
-- Styled with [Tailwind CSS 4](https://tailwindcss.com/)
-- Icons from [Lucide React](https://lucide.dev/)
-- Fonts from [Google Fonts](https://fonts.google.com/)
-
-## 📧 Contact
-
-For questions or feedback, reach out at contact@financeinsights.in
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-**Built with ❤️ for financial literacy and empowerment**
+*Built with ❤️ by the FinanceHub Team*

@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { SITE_CONFIG, CATEGORIES } from '@/lib/constants';
+import { SITE_CONFIG } from '@/lib/constants';
 import { getAllArticles, getAllCategories } from '@/lib/content';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

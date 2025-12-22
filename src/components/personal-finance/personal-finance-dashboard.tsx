@@ -85,7 +85,7 @@ export function PersonalFinanceDashboard() {
           <h3 className="font-semibold text-lg">Pro Tip of the Day</h3>
         </div>
         <p className="text-finance-navy-100 mb-4">
-          "The 50/30/20 rule is a great starting point: 50% for needs, 30% for wants, and 20% for savings and debt repayment."
+          &quot;The 50/30/20 rule is a great starting point: 50% for needs, 30% for wants, and 20% for savings and debt repayment.&quot;
         </p>
         <Link 
           href="/personal-finance/budgeting-methods"

@@ -1,18 +1,26 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { MarketSnapshot } from '@/components/ui/market-snapshot';
 import { getMarketQuotes, getStaticMarketData } from '@/lib/market-api';
 import { RefreshCw } from 'lucide-react';
 
 const SYMBOLS_TO_TRACK = ['NIFTY50', 'SENSEX', 'BANKNIFTY', 'SPX', 'DJI', 'IXIC', 'GOLD', 'USDINR'];
 
+interface MarketData {
+  name: string;
+  value: string;
+  change: string;
+  changePercent: string;
+  icon: 'chart';
+}
+
 export function StockMarketDashboard() {
-  const [data, setData] = useState<any[]>([]);
+  const [data, setData] = useState<MarketData[]>([]);
   const [loading, setLoading] = useState(true);
   const [lastUpdated, setLastUpdated] = useState<string>('');
 
-  const transformData = (quotes: Map<string, any> | Record<string, any>) => {
+  const transformData = useCallback((quotes: Map<string, any> | Record<string, any>) => {
     const source = quotes instanceof Map ? Object.fromEntries(quotes) : quotes;
     return SYMBOLS_TO_TRACK.map(symbol => {
       const q = source[symbol];
@@ -24,10 +32,10 @@ export function StockMarketDashboard() {
         changePercent: q.changePercent,
         icon: 'chart' as const
       };
-    }).filter(Boolean) as any[];
-  };
+    }).filter((item): item is MarketData => Boolean(item));
+  }, []);
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     setLoading(true);
     try {
       const quotes = await getMarketQuotes(SYMBOLS_TO_TRACK);
@@ -44,7 +52,7 @@ export function StockMarketDashboard() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [transformData]);
 
   useEffect(() => {
     // Initial load with static data to avoid layout shift
@@ -52,7 +60,7 @@ export function StockMarketDashboard() {
     fetchData();
     const interval = setInterval(fetchData, 300000); // 5 minutes
     return () => clearInterval(interval);
-  }, []);
+  }, [fetchData, transformData]);
 
   return (
     <div className="space-y-6">
@@ -64,8 +72,7 @@ export function StockMarketDashboard() {
         <button 
           onClick={fetchData}
           disabled={loading}
-          className="p-2 rounded-full hover:bg-muted transition-colors disabled:opacity-50"
-        >
+          className="p-2 rounded-full hover:bg-muted transition-colors disabled:opacity-50"          aria-label="Refresh market data"        >
           <RefreshCw className={`w-5 h-5 ${loading ? 'animate-spin' : ''}`} />
         </button>
       </div>

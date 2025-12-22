@@ -1,13 +1,12 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from 'recharts';
 
 const data = [
-  { name: 'Domestic Equity', value: 50, color: '#10b981' }, // Emerald 500
-  { name: 'International Equity', value: 15, color: '#3b82f6' }, // Blue 500
-  { name: 'Debt / Bonds', value: 25, color: '#8b5cf6' }, // Violet 500
-  { name: 'Gold / Commodities', value: 10, color: '#f59e0b' }, // Amber 500
+  { name: 'Domestic Equity', value: 50, color: '#10b981', twColor: 'bg-emerald-500' },
+  { name: 'International Equity', value: 15, color: '#3b82f6', twColor: 'bg-blue-500' },
+  { name: 'Debt / Bonds', value: 25, color: '#8b5cf6', twColor: 'bg-violet-500' },
+  { name: 'Gold / Commodities', value: 10, color: '#f59e0b', twColor: 'bg-amber-500' },
 ];
 
 export function PortfolioAllocation() {
@@ -52,7 +51,7 @@ export function PortfolioAllocation() {
         {data.map((item) => (
           <div key={item.name} className="flex items-center justify-between p-3 bg-muted/30 rounded-lg">
             <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full" style={{ backgroundColor: item.color }} />
+              <div className={`w-3 h-3 rounded-full ${item.twColor}`} />
               <span className="text-sm font-medium">{item.name}</span>
             </div>
             <span className="text-sm font-bold">{item.value}%</span>

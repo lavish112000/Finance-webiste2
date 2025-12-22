@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { CheckCircle2, Circle } from 'lucide-react';
 
 const steps = [
   {

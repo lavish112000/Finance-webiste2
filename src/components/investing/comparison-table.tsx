@@ -1,7 +1,5 @@
 'use client';
 
-import { Check, X, Minus } from 'lucide-react';
-
 const comparisonData = [
   {
     feature: 'Management Style',

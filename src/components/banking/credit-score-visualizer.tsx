@@ -68,7 +68,9 @@ export function CreditScoreVisualizer() {
                 <span>Score Range</span>
                 <span className="font-medium">300 - 900</span>
               </div>
+              <label htmlFor="score-slider" className="sr-only">Credit Score Slider</label>
               <input
+                id="score-slider"
                 type="range"
                 min="300"
                 max="900"

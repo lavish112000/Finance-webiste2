@@ -34,13 +34,13 @@ export function GlossaryTooltip({
       const spaceAbove = rect.top;
       
       // Position tooltip based on available space
-      if (spaceBelow < 250 && spaceAbove > spaceBelow) {
-        setPosition('top');
-      } else {
-        setPosition('bottom');
+      const newPosition = (spaceBelow < 250 && spaceAbove > spaceBelow) ? 'top' : 'bottom';
+      
+      if (position !== newPosition) {
+        setPosition(newPosition);
       }
     }
-  }, [isOpen]);
+  }, [isOpen, position]);
 
   return (
     <span className="relative inline-block">

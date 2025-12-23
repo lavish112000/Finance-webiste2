@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { Breadcrumbs } from '@/components/ui/breadcrumbs';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy - FinanceHub',
@@ -37,7 +38,8 @@ export default function PrivacyPolicyPage() {
         </p>
         <h2>Cookies</h2>
         <p>
-          We use cookies to enhance your experience. You can control cookies through your browser settings. See our <a href="/cookie-policy">Cookie Policy</a> for more details.
+          We use cookies to enhance your experience. You can control cookies through your browser settings. See our{' '}
+          <Link href="/cookie-policy">Cookie Policy</Link> for more details.
         </p>
         <h2>Data Security</h2>
         <p>

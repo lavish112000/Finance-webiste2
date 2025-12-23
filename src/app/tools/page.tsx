@@ -62,7 +62,7 @@ const educationTools = [
 
 export default function ToolsPage() {
   return (
-    <div className="min-h-screen py-12">
+    <div className="min-h-screen py-16 md:py-20">
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Header */}
         <div className="text-center mb-12">

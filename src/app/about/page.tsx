@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import Link from 'next/link';
 import { Breadcrumbs } from '@/components/ui/breadcrumbs';
 import { Target, Users, TrendingUp, Shield, Globe, BookOpen } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';

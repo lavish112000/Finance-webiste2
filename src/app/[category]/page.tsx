@@ -55,7 +55,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-linear-to-br from-finance-navy-900 via-finance-navy-800 to-finance-navy-900 text-white py-16">
+      <section className="bg-linear-to-br from-finance-navy-900 via-finance-navy-800 to-finance-navy-900 text-white py-20 md:py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <Breadcrumbs
             items={[{ name: category.name, href: `/${category.slug}` }]}
@@ -131,7 +131,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
       {/* Featured Article */}
       {featuredArticle && (
-        <section className="container mx-auto px-4 lg:px-8 py-12">
+        <section className="container mx-auto px-4 lg:px-8 py-16">
           <h2 className="text-xl font-bold text-foreground mb-6">Featured</h2>
           <ArticleCard
             {...featuredArticle}
@@ -144,7 +144,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       )}
 
       {/* All Articles */}
-      <section className="container mx-auto px-4 lg:px-8 py-12">
+      <section className="container mx-auto px-4 lg:px-8 py-16">
         <h2 className="text-xl font-bold text-foreground mb-6">All Articles</h2>
         {articles.length > 0 ? (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

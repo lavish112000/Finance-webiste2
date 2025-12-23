@@ -44,7 +44,7 @@ const TEAM = [
     image: '/team/alex.jpg',
   },
   {
-    name: 'Sarah Chen',
+    name: 'Lalit Choudhary',
     role: 'Senior Analyst',
     bio: 'CFA charterholder specializing in market trends and macroeconomics.',
     image: '/team/sarah.jpg',

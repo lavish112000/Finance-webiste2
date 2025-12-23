@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BookOpen, ExternalLink } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -39,28 +39,24 @@ export function GlossaryTooltip({
     }
   }
 
-  useEffect(() => {
-    if (isOpen && triggerRef.current) {
-      const rect = triggerRef.current.getBoundingClientRect();
-      const spaceBelow = window.innerHeight - rect.bottom;
-      const spaceAbove = rect.top;
-      
-      // Position tooltip based on available space
-      const newPosition = (spaceBelow < 250 && spaceAbove > spaceBelow) ? 'top' : 'bottom';
-      
-      if (position !== newPosition) {
-        setPosition(newPosition);
-      }
+  const updatePosition = () => {
+    if (!triggerRef.current) return;
+    const rect = triggerRef.current.getBoundingClientRect();
+    const spaceBelow = window.innerHeight - rect.bottom;
+    const spaceAbove = rect.top;
+    const newPosition: 'top' | 'bottom' = (spaceBelow < 250 && spaceAbove > spaceBelow) ? 'top' : 'bottom';
+    if (position !== newPosition) {
+      setPosition(newPosition);
     }
-  }, [isOpen, position]);
+  };
 
   return (
     <span className="relative inline-block">
       <span
         ref={triggerRef}
-        onMouseEnter={() => setIsOpen(true)}
+        onMouseEnter={() => { updatePosition(); setIsOpen(true); }}
         onMouseLeave={() => setIsOpen(false)}
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => { updatePosition(); setIsOpen(!isOpen); }}
         className={cn(
           'cursor-help border-b-2 border-dotted border-primary/50',
           'hover:border-primary transition-colors',
@@ -100,7 +96,7 @@ export function GlossaryTooltip({
               {/* Content */}
               <div className="relative bg-popover p-4">
                 <div className="flex items-start gap-2 mb-2">
-                  <BookOpen className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                  <BookOpen className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                   <h4 className="font-bold text-sm text-foreground">{term}</h4>
                 </div>
                 

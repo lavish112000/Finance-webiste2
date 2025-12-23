@@ -20,16 +20,23 @@ export function StockMarketDashboard() {
   const [loading, setLoading] = useState(true);
   const [lastUpdated, setLastUpdated] = useState<string>('');
 
-  const transformData = useCallback((quotes: Map<string, any> | Record<string, any>) => {
-    const source = quotes instanceof Map ? Object.fromEntries(quotes) : quotes;
+  type QuoteRecord = Record<string, unknown>;
+  const transformData = useCallback((quotes: Map<string, unknown> | QuoteRecord) => {
+    const source: QuoteRecord = quotes instanceof Map ? (Object.fromEntries(quotes) as QuoteRecord) : (quotes as QuoteRecord);
     return SYMBOLS_TO_TRACK.map(symbol => {
-      const q = source[symbol];
-      if (!q) return null;
+      const raw = source[symbol] as Partial<{
+        symbol: string;
+        price: number;
+        value: number;
+        change: number;
+        changePercent: number;
+      }> | undefined;
+      if (!raw) return null;
       return {
-        name: q.symbol || symbol,
-        value: Number(q.price || q.value),
-        change: Number(q.change),
-        changePercent: Number(q.changePercent),
+        name: raw.symbol ?? symbol,
+        value: Number(raw.price ?? raw.value ?? 0),
+        change: Number(raw.change ?? 0),
+        changePercent: Number(raw.changePercent ?? 0),
         icon: 'chart' as const
       };
     }).filter((item): item is MarketData => Boolean(item));

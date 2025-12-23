@@ -14,6 +14,7 @@ export interface Article {
   featureImageAlt: string;
   content: string;
   tableOfContents: TableOfContentsItem[];
+  keyTakeaways?: string[];
   relatedArticles?: string[];
   seoKeywords: string[];
   examRelevant?: boolean;

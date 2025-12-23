@@ -285,7 +285,7 @@ export default function HomePage() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {sampleArticles.slice(0, 6).map((article, index) => (
+          {sampleArticles.slice(0, 6).map((article) => (
             <ArticleCard key={article.slug} {...article} />
           ))}
         </div>

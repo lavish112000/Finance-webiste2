@@ -1,9 +1,8 @@
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import { MDXRemote } from 'next-mdx-remote/rsc';
-import { getArticle, getArticlesByCategory } from '@/lib/content';
+import { getAllArticles, getArticle } from '@/lib/content';
 import { ArticleContent } from '@/components/article/article-content';
-import { SITE_CONFIG } from '@/lib/constants';
 import { Article } from '@/types';
 
 // MDX Components
@@ -11,13 +10,18 @@ import { ArticleCard } from '@/components/ui/article-card';
 import { Callout } from '@/components/ui/callout';
 import { ComparisonTable } from '@/components/investing/comparison-table';
 import { MarketSnapshot } from '@/components/ui/market-snapshot';
+import { DisclaimerCallout } from '@/components/article/disclaimer-callout';
+import { KeyTakeaways } from '@/components/article/key-takeaways';
+import { GlossaryTooltip } from '@/components/ui/glossary-tooltip';
 
 const components = {
   ArticleCard,
   Callout,
   ComparisonTable,
   MarketSnapshot,
-  // Add other components used in MDX here
+  DisclaimerCallout,
+  KeyTakeaways,
+  GlossaryTooltip,
 };
 
 interface ArticlePageProps {
@@ -63,8 +67,8 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   // Fetch related articles
   let relatedArticles: Article[] = [];
   if (article.relatedArticles && article.relatedArticles.length > 0) {
-    const categoryArticles = getArticlesByCategory(category);
-    relatedArticles = categoryArticles.filter(a => article.relatedArticles?.includes(a.slug));
+    const allArticles = getAllArticles();
+    relatedArticles = allArticles.filter((a) => article.relatedArticles?.includes(a.slug));
   }
 
   return (

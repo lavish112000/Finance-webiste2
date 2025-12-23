@@ -9,9 +9,9 @@ const SYMBOLS_TO_TRACK = ['NIFTY50', 'SENSEX', 'BANKNIFTY', 'SPX', 'DJI', 'IXIC'
 
 interface MarketData {
   name: string;
-  value: string;
-  change: string;
-  changePercent: string;
+  value: number;
+  change: number;
+  changePercent: number;
   icon: 'chart';
 }
 
@@ -27,9 +27,9 @@ export function StockMarketDashboard() {
       if (!q) return null;
       return {
         name: q.symbol || symbol,
-        value: q.price || q.value,
-        change: q.change,
-        changePercent: q.changePercent,
+        value: Number(q.price || q.value),
+        change: Number(q.change),
+        changePercent: Number(q.changePercent),
         icon: 'chart' as const
       };
     }).filter((item): item is MarketData => Boolean(item));
